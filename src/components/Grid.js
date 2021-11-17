@@ -9,11 +9,11 @@ const Grid = props => {
     useEffect(() => {
         const newImage = makeBoard(gridSize)
         setImage(newImage)
-    }, [])
+    }, [gridSize])
 
     if(image.length){
 
-        return <table>{image.map((row, idx) => <Rows row={row} key={"row"+idx} choosenColor={choosenColor} mouseActive={mouseActive}/>)}</table>
+        return <table><tbody>{image.map((row, idx) => <Rows row={row} key={"row:"+idx} choosenColor={choosenColor} mouseActive={mouseActive}/>)}</tbody></table>
     } else return null
 }
 
