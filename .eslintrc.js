@@ -1,38 +1,38 @@
 module.exports = {
-    env: {
-        browser: true, // Browser global variables like `window` etc.
-        commonjs: true, // CommonJS global variables and CommonJS scoping.Allows require, exports and module.
-        es6: true, // Enable all ECMAScript 6 features except for modules.
-        jest: true, // Jest global variables like `it` etc.
-        node: true // Defines things like process.env when generating through node
-    },
-    extends: [  "eslint:recommended",
+  env: {
+    browser: true, // Browser global variables like `window` etc.
+    commonjs: true, // CommonJS global variables and CommonJS scoping.Allows require, exports and module.
+    es6: true, // Enable all ECMAScript 6 features except for modules.
+    jest: true, // Jest global variables like `it` etc.
+    node: true, // Defines things like process.env when generating through node
+  },
+  extends: [
+    "eslint:recommended",
     "plugin:react/recommended",
     // "plugin:jsx-a11y/recommended"
-],
-    parser: "babel-eslint", // Uses babel-eslint transforms.
-    parserOptions: {
-        ecmaFeatures: {
-            jsx: true
-        },
-        ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-        sourceType: "module" // Allows for the use of imports
+  ],
+  parser: "babel-eslint", // Uses babel-eslint transforms.
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    plugins: [ "import" // eslint-plugin-import plugin. https://www.npmjs.com/package/eslint-plugin-import
-],
-    root: true, // For configuration cascading.
-    rules: {quotes: [
-        "warn",
-        "double"
-    ],
+    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
+    sourceType: "module", // Allows for the use of imports
+  },
+  plugins: [
+    "import", // eslint-plugin-import plugin. https://www.npmjs.com/package/eslint-plugin-import
+  ],
+  root: true, // For configuration cascading.
+  rules: {
+    quotes: ["warn", "double"],
     // "no-console": "warn", //add back in for final version
     "no-unused-vars": "off", //remove for final version
     "no-useless-catch": "off", //remove for final version
-    "react/prop-types": "off" //remove for final version
-},
-    settings: {
-        react: {
-            version: "detect" // Detect react version
-        }
-    }
+    "react/prop-types": "off", //remove for final version
+  },
+  settings: {
+    react: {
+      version: "detect", // Detect react version
+    },
+  },
 };
