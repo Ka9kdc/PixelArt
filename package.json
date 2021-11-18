@@ -11,7 +11,8 @@
     "db:build": "node ./db/init_db",
     "start": "node index.js",
     "lint": "eslint ./ --ignore-path .gitignore",
-    "lint-fix": "npm run lint -- --fix"
+    "lint-fix": "npm run lint -- --fix",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -30,7 +31,8 @@
     "react-scripts": "^3.4.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "husky": "^7.0.0"
   },
   "proxy": "http://localhost:5000",
   "browserslist": {
@@ -46,19 +48,19 @@
     ]
   },
   "husky": {
-"hooks": {
- "pre-commit": "lint-staged"
- }
-},
-"lint-staged": {
-  "*.{js,jsx}": [
-    "prettier --write",
-    "npm run lint-fix",
-    "git add"
-  ],
-  "*.{css,scss,json,md}": [
-    "prettier --write",
-    "git add"
-  ]
-}
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "npm run lint-fix",
+      "git add"
+    ],
+    "*.{css,scss,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
