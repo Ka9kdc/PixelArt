@@ -18,7 +18,7 @@ const Grid = (props) => {
 			newPainting.push(image.slice(i * gridSize, (i + 1) * gridSize));
 		}
 		setPainting(newPainting);
-	}, [image]);
+	}, [gridSize, image]);
 
 	if (image.length) {
 		return (

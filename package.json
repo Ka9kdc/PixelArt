@@ -12,7 +12,9 @@
     "start": "node index.js",
     "lint": "eslint ./ --ignore-path .gitignore",
     "lint-fix": "npm run lint -- --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettify": "prettier --write \"**/*.{js,jsx,json,css,scss,md}\"",
+    "prettier": "npm run lint-fix && prettier --write ./ --ignore-path .gitignore"
   },
   "keywords": [],
   "author": "",
@@ -20,19 +22,18 @@
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.0.2",
     "morgan": "^1.10.0",
     "pg": "^8.2.1",
-    "prettier": "^2.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1"
   },
   "devDependencies": {
+    "husky": "^7.0.0",
+    "lint-staged": "^12.0.2",
     "nodemon": "^2.0.4",
-    "husky": "^7.0.0"
+    "prettier": "^2.4.1"
   },
   "proxy": "http://localhost:5000",
   "browserslist": {
