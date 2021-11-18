@@ -18,7 +18,7 @@ const App = () => {
       <h1>Hello, World!</h1>
       <h2>{ message }</h2>
       <Pallette choosenColor={choosenColor} setChoosenColor={setChoosenColor} />
-      <Grid choosenColor={choosenColor} mouseActive={mouseActive} gridSize={gridSize} />
+      <Grid choosenColor={choosenColor} mouseActive={mouseActive}  setMouseActive={setMouseActive} gridSize={gridSize} />
     </div>
   );
 }

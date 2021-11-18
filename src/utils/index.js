@@ -3,7 +3,7 @@ export function makeBoard (gridSize){
     for(let i = 0; i < Math.pow(gridSize, 2); i++){
        grid.push({
                 id: i,
-                color: "white"
+                color: ""
             }
        )
     }
