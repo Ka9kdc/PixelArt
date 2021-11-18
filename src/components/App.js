@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import BoardSize from "./BoardSize";
 
 // import {
 //   getSomething
@@ -16,6 +17,7 @@ const App = () => {
     <div className="App">
       <h1>Hello, World!</h1>
       <h2>{message}</h2>
+      <BoardSize setGridSize={setGridSize} />
       <Pallette choosenColor={choosenColor} setChoosenColor={setChoosenColor} />
       <Grid
         choosenColor={choosenColor}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { makeBoard } from "../utils";
+import { makeBoard } from "../../utils";
 import Rows from "./Rows";
 
 const Grid = (props) => {

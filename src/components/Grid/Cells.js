@@ -1,5 +1,5 @@
 import React from "react";
-import { makeBoard } from "../utils";
+import { makeBoard } from "../../utils";
 
 const Cells = (props) => {
   const {
