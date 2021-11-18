@@ -9,7 +9,9 @@
     "client:build": "react-scripts build",
     "server:dev": "nodemon index.js",
     "db:build": "node ./db/init_db",
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint ./ --ignore-path .gitignore",
+    "lint-fix": "npm run lint -- --fix"
   },
   "keywords": [],
   "author": "",
@@ -17,8 +19,11 @@
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.0.2",
     "morgan": "^1.10.0",
     "pg": "^8.2.1",
+    "prettier": "^2.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
@@ -39,5 +44,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "husky": {
+"hooks": {
+ "pre-commit": "lint-staged"
+ }
+},
+"lint-staged": {
+  "*.{js,jsx}": [
+    "prettier --write",
+    "npm run lint-fix",
+    "git add"
+  ],
+  "*.{css,scss,json,md}": [
+    "prettier --write",
+    "git add"
+  ]
+}
 }
