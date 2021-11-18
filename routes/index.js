@@ -1,4 +1,4 @@
-const apiRouter = require('express').Router();
+const apiRouter = require("express").Router();
 
 apiRouter.get("/", (req, res, next) => {
   res.send({

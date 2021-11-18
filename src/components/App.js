@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 // import {
 //   getSomething
 // } from '../api';
-import Grid from './Grid';
-import Pallette from './Pallette';
+import Grid from "./Grid";
+import Pallette from "./Pallette";
 
 const App = () => {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [gridSize, setGridSize] = useState(8)
   const [mouseActive, setMouseActive] = useState(false)
   const [choosenColor, setChoosenColor] = useState("red")

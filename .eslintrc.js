@@ -8,7 +8,8 @@ module.exports = {
     },
     extends: [  "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"],
+    // "plugin:jsx-a11y/recommended"
+],
     parser: "babel-eslint", // Uses babel-eslint transforms.
     parserOptions: {
         ecmaFeatures: {
@@ -24,8 +25,10 @@ module.exports = {
         "warn",
         "double"
     ],
-    "no-console": "warn",
-    "no-unused-vars": "warn",
+    // "no-console": "warn", //add back in for final version
+    "no-unused-vars": "off", //remove for final version
+    "no-useless-catch": "off", //remove for final version
+    "react/prop-types": "off" //remove for final version
 },
     settings: {
         react: {
