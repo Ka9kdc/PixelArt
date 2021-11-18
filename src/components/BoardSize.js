@@ -8,7 +8,13 @@ const BoardSize = (props) => {
       <h3>Choose a canavus siz:</h3>
       {sizeOptions.map((size) => {
         return (
-          <button type="button" onClick={() => setGridSize(size)} key={size}>
+          <button
+            type="button"
+            onClick={() => {
+              setGridSize(size);
+            }}
+            key={size}
+          >
             {size} by {size}
           </button>
         );

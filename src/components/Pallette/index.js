@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AddNewColor from "./AddNewColor";
 
 const Pallette = (props) => {
-  const { setChoosenColor, choosenColor } = props;
+  const { setChoosenColor, choosenColor, setMouseActive } = props;
   const [colorOptions, setColorOptions] = useState([
     "red",
     "yellow",
@@ -22,7 +22,10 @@ const Pallette = (props) => {
           key={col}
           className={col === choosenColor ? "cell active" : "cell"}
           style={{ backgroundColor: col }}
-          onClick={() => setChoosenColor(col)}
+          onClick={() => {
+            setChoosenColor(col);
+            setMouseActive(false);
+          }}
         >
           {col}
         </div>
@@ -33,6 +36,7 @@ const Pallette = (props) => {
           setColorOptions={setColorOptions}
           setChoosenColor={setChoosenColor}
           setAdd={setAdd}
+          setMouseActive={setMouseActive}
         />
       ) : (
         <button
@@ -40,6 +44,7 @@ const Pallette = (props) => {
           onClick={(event) => {
             event.preventDefault();
             setAdd(true);
+            setMouseActive(false);
           }}
         >
           Add A Color

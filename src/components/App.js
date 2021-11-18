@@ -18,7 +18,11 @@ const App = () => {
       <h1>Hello, World!</h1>
       <h2>{message}</h2>
       <BoardSize setGridSize={setGridSize} />
-      <Pallette choosenColor={choosenColor} setChoosenColor={setChoosenColor} />
+      <Pallette
+        choosenColor={choosenColor}
+        setChoosenColor={setChoosenColor}
+        setMouseActive={setMouseActive}
+      />
       <Grid
         choosenColor={choosenColor}
         mouseActive={mouseActive}

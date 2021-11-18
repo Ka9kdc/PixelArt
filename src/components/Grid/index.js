@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { makeBoard } from "../../utils";
+import ActionPanel from "./ActionPanel";
 import Rows from "./Rows";
 
 const Grid = (props) => {
@@ -10,6 +11,7 @@ const Grid = (props) => {
   useEffect(() => {
     const newImage = makeBoard(gridSize);
     setImage(newImage);
+    setMouseActive(false);
   }, [gridSize]);
 
   useEffect(() => {
@@ -22,21 +24,30 @@ const Grid = (props) => {
 
   if (image.length) {
     return (
-      <table>
-        <tbody>
-          {painting.map((row, idx) => (
-            <Rows
-              image={image}
-              setImage={setImage}
-              mouseActive={mouseActive}
-              row={row}
-              key={"row:" + idx}
-              choosenColor={choosenColor}
-              setMouseActive={setMouseActive}
-            />
-          ))}
-        </tbody>
-      </table>
+      <div>
+        {" "}
+        <table>
+          <tbody>
+            {painting.map((row, idx) => (
+              <Rows
+                image={image}
+                setImage={setImage}
+                mouseActive={mouseActive}
+                row={row}
+                key={"row:" + idx}
+                choosenColor={choosenColor}
+                setMouseActive={setMouseActive}
+              />
+            ))}
+          </tbody>
+        </table>
+        <ActionPanel
+          image={image}
+          setImage={setImage}
+          choosenColor={choosenColor}
+          setMouseActive={setMouseActive}
+        />
+      </div>
     );
   } else return null;
 };
