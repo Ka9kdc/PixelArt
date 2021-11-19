@@ -16,17 +16,36 @@ table {
 }
 
 .cell.board,
-.pallette .cell {
+.flex_row .cell {
   border: 1px solid black;
 }
 
-.pallette .cell.active {
+.flex_row .cell.active {
   border: 5px solid yellow;
   transform: rotateZ(45deg);
 }
 
-.pallette {
+.active i.fas.fa-eraser.fa-3x {
+  background-color: white;
+  mix-blend-mode: overlay;
+  transform: scale(70%) rotateZ(-45deg) translateY(-10px);
+}
+
+.flex_row {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.three_columns {
+  display: grid;
+  grid-template-columns: 2fr auto 1fr;
+  grid-template-rows: 1fr;
+}
+
+.actions {
+  display: flex;
+  flex-flow: column wrap;
   justify-content: space-around;
 }

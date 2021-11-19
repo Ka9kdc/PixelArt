@@ -24,7 +24,7 @@ const ActionPanel = (props) => {
   }
 
   return (
-    <div>
+    <div className="actions">
       <button type="button" onClick={fillEmpty}>
         Fill All Empty Cells
       </button>

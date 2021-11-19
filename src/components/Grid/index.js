@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { makeBoard } from "../../utils";
 import ActionPanel from "./ActionPanel";
+import Pallette from "./Pallette";
 import Rows from "./Rows";
 
 const Grid = (props) => {
-  const { gridSize, setMouseActive, mouseActive, choosenColor } = props;
+  const { gridSize, setMouseActive, mouseActive } = props;
   const [image, setImage] = useState([]);
   const [painting, setPainting] = useState([]);
-
+  const [choosenColor, setChoosenColor] = useState("red");
   useEffect(() => {
     const newImage = makeBoard(gridSize);
     setImage(newImage);
@@ -24,8 +25,12 @@ const Grid = (props) => {
 
   if (image.length) {
     return (
-      <div>
-        {" "}
+      <div className="three_columns">
+        <Pallette
+          choosenColor={choosenColor}
+          setChoosenColor={setChoosenColor}
+          setMouseActive={setMouseActive}
+        />
         <table>
           <tbody>
             {painting.map((row, idx) => (

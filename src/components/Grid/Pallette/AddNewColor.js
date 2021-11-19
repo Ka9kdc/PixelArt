@@ -19,7 +19,7 @@ const AddNewColor = (props) => {
     setMouseActive(false);
   }
   return (
-    <form onSubmit={handleSubmit} className="pallette">
+    <form onSubmit={handleSubmit} className="flex_row">
       <fieldset>
         <label htmlFor="newColorPicker">Choose your Color: {newColor}</label>
         <input
