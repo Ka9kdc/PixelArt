@@ -15,7 +15,9 @@ table {
   min-height: 5px;
 }
 
-.cell.board,
+.cell.board {
+  border: 1px solid gray;
+}
 .flex_row .cell {
   border: 1px solid black;
 }

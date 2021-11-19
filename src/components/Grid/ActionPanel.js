@@ -2,7 +2,14 @@ import React from "react";
 import { makeBoard } from "../../utils";
 
 const ActionPanel = (props) => {
-  const { image, setImage, choosenColor, setMouseActive } = props;
+  const {
+    image,
+    setImage,
+    choosenColor,
+    setMouseActive,
+    cellBordersOn,
+    setCellBordersOn,
+  } = props;
 
   function fillEmpty() {
     let newImage = makeBoard(Math.sqrt(image.length));
@@ -40,6 +47,27 @@ const ActionPanel = (props) => {
       >
         Clear Cells
       </button>
+      {cellBordersOn ? (
+        <button
+          type="button"
+          onClick={() => {
+            setCellBordersOn(false);
+            setMouseActive(false);
+          }}
+        >
+          Hide Grid lines
+        </button>
+      ) : (
+        <button
+          type="button"
+          onClick={() => {
+            setCellBordersOn(true);
+            setMouseActive(false);
+          }}
+        >
+          See Grid Lines
+        </button>
+      )}
     </div>
   );
 };

@@ -11,6 +11,7 @@ const Cells = (props) => {
     image,
     setImage,
     gridSize,
+    cellBordersOn,
   } = props;
   function handleColorChange(event) {
     event.preventDefault();
@@ -29,7 +30,7 @@ const Cells = (props) => {
       }}
       onMouseOver={(event) => (mouseActive ? handleColorChange(event) : null)}
       onMouseUp={() => setMouseActive(false)}
-      className="cell"
+      className={cellBordersOn ? "cell board" : "cell"}
       style={{ backgroundColor: color, "--grid-size": gridSize }}
     ></td>
   );

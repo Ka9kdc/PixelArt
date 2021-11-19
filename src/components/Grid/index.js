@@ -9,6 +9,8 @@ const Grid = (props) => {
   const [image, setImage] = useState([]);
   const [painting, setPainting] = useState([]);
   const [choosenColor, setChoosenColor] = useState("red");
+  const [cellBordersOn, setCellBordersOn] = useState(true);
+
   useEffect(() => {
     const newImage = makeBoard(gridSize);
     setImage(newImage);
@@ -43,6 +45,7 @@ const Grid = (props) => {
                 choosenColor={choosenColor}
                 setMouseActive={setMouseActive}
                 gridSize={gridSize}
+                cellBordersOn={cellBordersOn}
               />
             ))}
           </tbody>
@@ -52,6 +55,8 @@ const Grid = (props) => {
           setImage={setImage}
           choosenColor={choosenColor}
           setMouseActive={setMouseActive}
+          cellBordersOn={cellBordersOn}
+          setCellBordersOn={setCellBordersOn}
         />
       </div>
     );

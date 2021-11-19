@@ -10,6 +10,7 @@ const Rows = (props) => {
     image,
     setImage,
     gridSize,
+    cellBordersOn,
   } = props;
   if (row.length) {
     return (
@@ -25,6 +26,7 @@ const Rows = (props) => {
             setMouseActive={setMouseActive}
             mouseActive={mouseActive}
             gridSize={gridSize}
+            cellBordersOn={cellBordersOn}
           />
         ))}
       </tr>
