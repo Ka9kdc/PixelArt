@@ -37,6 +37,7 @@ const Grid = (props) => {
                 key={"row:" + idx}
                 choosenColor={choosenColor}
                 setMouseActive={setMouseActive}
+                gridSize={gridSize}
               />
             ))}
           </tbody>

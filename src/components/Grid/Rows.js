@@ -2,8 +2,15 @@ import React from "react";
 import Cells from "./Cells";
 
 const Rows = (props) => {
-  const { row, choosenColor, mouseActive, setMouseActive, image, setImage } =
-    props;
+  const {
+    row,
+    choosenColor,
+    mouseActive,
+    setMouseActive,
+    image,
+    setImage,
+    gridSize,
+  } = props;
   if (row.length) {
     return (
       <tr>
@@ -17,6 +24,7 @@ const Rows = (props) => {
             choosenColor={choosenColor}
             setMouseActive={setMouseActive}
             mouseActive={mouseActive}
+            gridSize={gridSize}
           />
         ))}
       </tr>

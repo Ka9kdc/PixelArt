@@ -2,7 +2,7 @@ import React from "react";
 
 const BoardSize = (props) => {
   const { setGridSize } = props;
-  const sizeOptions = [8, 12, 16, 24, 32, 48, 64, 92, 128];
+  const sizeOptions = [8, 12, 16, 24, 32];
   return (
     <div className="pallette">
       <h3>Choose a canavus siz:</h3>

@@ -7,6 +7,7 @@ const AddNewColor = (props) => {
     setChoosenColor,
     setAdd,
     setMouseActive,
+    optionPerRow,
   } = props;
   const [newColor, setNewColor] = useState("#000000");
   function handleSubmit(event) {
@@ -18,20 +19,28 @@ const AddNewColor = (props) => {
     setMouseActive(false);
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="pallette">
       <fieldset>
+        <label htmlFor="newColorPicker">Choose your Color: {newColor}</label>
         <input
           type="color"
           id="newColorPicker"
           name="newColorPicker"
           value={newColor}
+          className="cell"
+          style={{ "--grid-size": Math.min(optionPerRow, 12) }}
           onChange={(event) => {
             setNewColor(event.target.value);
           }}
         />
-        <label htmlFor="newColorPicker">Choose your Color: {newColor}</label>
       </fieldset>
-      <button type="submit">Add Color</button>
+      <button
+        type="submit"
+        className="cell"
+        style={{ "--grid-size": Math.min(optionPerRow, 12) }}
+      >
+        Add Color
+      </button>
     </form>
   );
 };

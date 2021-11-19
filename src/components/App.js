@@ -14,7 +14,7 @@ const App = () => {
   const [choosenColor, setChoosenColor] = useState("red");
 
   return (
-    <div className="App">
+    <div className="App" onMouseUp={() => setMouseActive(false)}>
       <h1>Hello, World!</h1>
       <h2>{message}</h2>
       <BoardSize setGridSize={setGridSize} />

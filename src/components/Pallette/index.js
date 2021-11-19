@@ -13,22 +13,65 @@ const Pallette = (props) => {
     "pink",
     "black",
     "white",
+    "#100000",
+    "#00000a",
+    "#0000a0",
+    "#000a00",
+    "#00a000",
+    "#010000",
+    "#10000a",
+    "#0000a1",
+    "#000a10",
+    "#00a100",
+    "#0cc000",
+    "#cc0000",
+    "#1000a1",
+    "#000acc",
+    "#00acc0",
+    "#0cc100",
+    "#cc1000",
+    "#cc000a",
+    "#100acc",
+    "#00acc1",
+    "#0cccc0",
+    "#cccc00",
+    "#cc100a",
+    "#cc00a1",
+    "#10cccc",
+    "#000abb",
+    "#00abb0",
+    "#0bb100",
+    "#bb1000",
+    "#bb000a",
+    "#100abb",
+    "#00abb1",
+    "#0bbbb0",
+    "#bbbb00",
+    "#bb100a",
+    "#bb00a1",
+    "#10bbbb",
   ]);
   const [addCol, setAdd] = useState(false);
+  let optionPerRow = colorOptions.length + 1;
+  if (optionPerRow > 12) {
+    optionPerRow = Math.ceil(Math.sqrt(colorOptions.length + 1));
+    console.log(optionPerRow);
+  }
   return (
     <div className="pallette">
       {colorOptions.map((col) => (
         <div
           key={col}
           className={col === choosenColor ? "cell active" : "cell"}
-          style={{ backgroundColor: col }}
+          style={{
+            backgroundColor: col,
+            "--grid-size": Math.min(optionPerRow, 12),
+          }}
           onClick={() => {
             setChoosenColor(col);
             setMouseActive(false);
           }}
-        >
-          {col}
-        </div>
+        ></div>
       ))}
       {addCol ? (
         <AddNewColor
@@ -37,10 +80,13 @@ const Pallette = (props) => {
           setChoosenColor={setChoosenColor}
           setAdd={setAdd}
           setMouseActive={setMouseActive}
+          optionPerRow={optionPerRow}
         />
       ) : (
         <button
           type="button"
+          className="cell"
+          style={{ "--grid-size": Math.min(optionPerRow, 12) }}
           onClick={(event) => {
             event.preventDefault();
             setAdd(true);
