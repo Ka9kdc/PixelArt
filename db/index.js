@@ -5,19 +5,22 @@ const DB_URL = process.env.DATABASE_URL || `postgres://${DB_NAME}`;
 const client = new Client(DB_URL);
 
 // database methods
+const bcrypt = require("bcrypt");
+const SALT_COUNT = 10;
 
 const createUser = async ({ username, password }) => {
   try {
     const errorFound = new Error("invalid username or password");
     if (!username || !password) throw errorFound;
     if (password.length < 8) throw errorFound;
-    const repeatUser = await getUserbyUsername(username);
+    const repeatUser = await getUserByUsername(username);
     if (repeatUser) throw errorFound;
+    const hashedPassword = await bcrypt.hash(password, SALT_COUNT);
     const {
       rows: [newUser],
     } = await client.query(
       "INSERT INTO users (username, password) VALUES ($1, $2) RETURNING id, username",
-      [username, password]
+      [username, hashedPassword]
     );
     return newUser;
   } catch (error) {
@@ -25,18 +28,56 @@ const createUser = async ({ username, password }) => {
   }
 };
 
-const getUserbyUsername = async (username) => {
+async function getUser({ username, password }) {
+  if (!username || !password) {
+    return;
+  }
+
   try {
-    const {
-      rows: [user],
-    } = await client.query("SELECT id, username FROM users WHERE username=$1", [
-      username,
-    ]);
+    const user = await getUserByUsername(username);
+    if (!user) return;
+    const hashedPassword = user.password;
+    const passwordsMatch = await bcrypt.compare(password, hashedPassword);
+    if (!passwordsMatch) return;
+    delete user.password;
+    return user;
+  } catch (error) {
+    throw error;
+  }
+}
+
+const getUserByUsername = async (username) => {
+  try {
+    const { rows } = await client.query(
+      "SELECT * FROM users WHERE username=$1",
+      [username]
+    );
+    if (!rows || !rows.length) return null;
+    const [user] = rows;
     return user;
   } catch (error) {
     throw error;
   }
 };
+
+async function getUserById(userId) {
+  try {
+    const {
+      rows: [user],
+    } = await client.query(
+      `
+      SELECT id, username
+      FROM users
+      WHERE id = $1;
+    `,
+      [userId]
+    );
+    if (!user) return null;
+    return user;
+  } catch (error) {
+    throw error;
+  }
+}
 
 const createArtwork = async ({ isPublic, borders, imageArr, name, userId }) => {
   try {
@@ -91,4 +132,6 @@ module.exports = {
   // db methods
   createArtwork,
   createUser,
+  getUserById,
+  getUserByUsername,
 };
