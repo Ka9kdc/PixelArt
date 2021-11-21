@@ -14,7 +14,7 @@ const Grid = (props) => {
   useEffect(() => {
     const newImage = makeBoard(gridSize);
     setImage(newImage);
-    setMouseActive(false);
+    // setMouseActive(false);
   }, [gridSize]);
 
   useEffect(() => {

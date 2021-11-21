@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import BoardSize from "./BoardSize";
 
 // import {
@@ -7,14 +7,14 @@ import BoardSize from "./BoardSize";
 import Grid from "./Grid";
 
 const App = () => {
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
   const [gridSize, setGridSize] = useState(8);
   const [mouseActive, setMouseActive] = useState(false);
 
   return (
     <div className="App" onMouseUp={() => setMouseActive(false)}>
       <h1>Hello, World!</h1>
-      <h2>{message}</h2>
+      {/* <h2>{message}</h2> */}
       <BoardSize setGridSize={setGridSize} />
       <Grid
         mouseActive={mouseActive}

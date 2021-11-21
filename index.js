@@ -6,6 +6,8 @@ const server = express();
 const morgan = require("morgan");
 server.use(morgan("dev"));
 
+const cors = require("cors");
+server.use(cors());
 // handle application/json requests
 server.use(express.json());
 
@@ -27,7 +29,7 @@ const { client } = require("./db");
 // connect to the server
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, async () => {
-  console.log(`Server is running on ${PORT}!`);
+  console.log(`Server is running on localhost:${PORT}!`);
 
   try {
     await client.connect();
