@@ -1,14 +1,20 @@
 import React, { useState } from "react";
+import { createArtwork } from "../../api";
 
 const SaveForm = (props) => {
+  const { image, setSaving } = props;
   const [imageName, setImageName] = useState("");
   const [isPublic, setIsPublic] = useState(false);
   const [bordersOn, setbordersOn] = useState(false);
 
-  function handleSave(event) {
+  async function handleSave(event) {
     event.preventDefault();
-
-    console.log("saving");
+    try {
+      await createArtwork(image, imageName, isPublic, bordersOn);
+      setSaving(false);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import BoardSize from "./BoardSize";
-import SaveForm from "./Grid/SaveForm";
+
 // import {
 //   getSomething
 // } from '../api';
@@ -15,7 +15,6 @@ const App = () => {
     <div className="App" onMouseUp={() => setMouseActive(false)}>
       <h1>Hello, World!</h1>
       {/* <h2>{message}</h2> */}
-      <SaveForm />
       <BoardSize setGridSize={setGridSize} />
       <Grid
         mouseActive={mouseActive}

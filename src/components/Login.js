@@ -18,7 +18,6 @@ const Login = (props) => {
     else {
       try {
         const data = await loginUser(username, password);
-        console.log(data);
         storeToken(data.token);
         setIsLoggedIn(true);
         setErrorMessage("");

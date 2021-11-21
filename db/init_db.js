@@ -4,6 +4,7 @@ const {
   // other db methods
   createUser,
   createArtwork,
+  getUserById,
 } = require("./index");
 
 async function buildTables() {

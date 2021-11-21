@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeBoard } from "../../utils";
+import SaveForm from "./SaveForm";
+import { getToken } from "../../auth";
 
 const ActionPanel = (props) => {
   const {
@@ -10,6 +12,8 @@ const ActionPanel = (props) => {
     cellBordersOn,
     setCellBordersOn,
   } = props;
+  const [saving, setSaving] = useState(false);
+  const [savingError, setSavingError] = useState("");
 
   function fillEmpty() {
     let newImage = makeBoard(Math.sqrt(image.length));
@@ -28,6 +32,18 @@ const ActionPanel = (props) => {
     });
     setImage(newImage);
     setMouseActive(false);
+  }
+
+  function checkSave() {
+    const token = getToken();
+    if (token) {
+      setSaving(true);
+      setSavingError("");
+    } else {
+      setSaving(false);
+      setSavingError("Please log in to save your artwork");
+      localStorage.setItem("image", JSON.stringify(image));
+    }
   }
 
   return (
@@ -68,9 +84,11 @@ const ActionPanel = (props) => {
           See Grid Lines
         </button>
       )}
-      <button type="button" onClick={() => console.log(image)}>
+      <button type="button" onClick={checkSave}>
         Save
       </button>
+      {saving ? <SaveForm image={image} setSaving={setSaving} /> : null}
+      {savingError.length ? <span>{savingError}</span> : null}
     </div>
   );
 };

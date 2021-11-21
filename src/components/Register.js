@@ -22,7 +22,6 @@ const Register = (props) => {
     else {
       try {
         const data = await registerUser(username, password);
-        console.log(data);
         storeToken(data.token);
         setIsLoggedIn(true);
         setErrorMessage("");

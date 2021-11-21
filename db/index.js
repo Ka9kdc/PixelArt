@@ -68,7 +68,7 @@ async function getUserById(userId) {
       `
       SELECT id, username
       FROM users
-      WHERE id = $1;
+      WHERE id=$1;
     `,
       [userId]
     );
@@ -154,6 +154,7 @@ module.exports = {
   // db methods
   createArtwork,
   createUser,
+  getUser,
   getUserById,
   getUserByUsername,
   getPublicArtwork,
