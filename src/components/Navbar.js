@@ -16,16 +16,16 @@ const Navbar = (props) => {
       <Link to="/painting">Painting</Link>
       <Link to="/gallery">Public Gallery</Link>
       {isLoggedIn ? (
+        <Link to="/mygallery">My Gallery</Link>
+      ) : (
+        <Link to="/register">Register</Link>
+      )}
+      {isLoggedIn ? (
         <Link to="/" onClick={logout}>
           Log out
         </Link>
       ) : (
         <Link to="/login">Login</Link>
-      )}
-      {isLoggedIn ? (
-        <Link>My Gallery</Link>
-      ) : (
-        <Link to="register">Register</Link>
       )}
     </nav>
   );

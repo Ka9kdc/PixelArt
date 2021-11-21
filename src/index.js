@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./style.css";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
-import { App, Login, Register, Navbar } from "./components";
+import { App, Login, Register, Navbar, Gallery, MyGallery } from "./components";
 import { getToken } from "./auth";
 
 const Root = () => {
@@ -33,6 +33,12 @@ const Root = () => {
             <Register isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
           </Route>
         )}
+        <Route path="/gallery">
+          <Gallery />
+        </Route>
+        <Route path="/mygallery">
+          <MyGallery />
+        </Route>
       </Switch>
     </main>
   );

@@ -49,3 +49,27 @@ export async function createArtwork(imageArr, name, isPublic, borders) {
     throw error;
   }
 }
+
+export async function getPublicArtwork() {
+  try {
+    const { data } = await axios.get(`${BASEURL}/artwork/public`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getMyArtwork() {
+  try {
+    const token = getToken();
+    const { data } = await axios.get(`${BASEURL}/artwork/public`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
