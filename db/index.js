@@ -126,6 +126,28 @@ const createArtwork = async ({ isPublic, borders, imageArr, name, userId }) => {
   }
 };
 
+const getPublicArtwork = async () => {
+  try {
+    const { rows } = await client.query(
+      "SELECT artwork.*, users.username FROM artwork JOIN users on artwork.user_id=users.id WHERE is_public=true;"
+    );
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const getArtworkByUserId = async (userId) => {
+  try {
+    const rows = await client.query("SELECT * from artwork WHERE user_id=$1", [
+      userId,
+    ]);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+};
+
 // export
 module.exports = {
   client,
@@ -134,4 +156,6 @@ module.exports = {
   createUser,
   getUserById,
   getUserByUsername,
+  getPublicArtwork,
+  getArtworkByUserId,
 };
