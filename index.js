@@ -19,7 +19,7 @@ server.use(express.static(path.join(__dirname, "build")));
 server.use("/api", require("./routes"));
 
 // by default serve up the react app if we don't recognize the route
-server.use((req, res, next) => {
+server.use((req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 

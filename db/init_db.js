@@ -4,7 +4,6 @@ const {
   // other db methods
   createUser,
   createArtwork,
-  getUserById,
 } = require("./index");
 
 async function buildTables() {
@@ -182,19 +181,19 @@ async function populateInitialData() {
     const user = await createUser(me);
     console.log("create artwork");
     const image1 = {
-      userId: 1,
+      userId: user.id,
       imageArr: painting1,
       name: "rainbow",
       isPublic: true,
     };
     const image2 = {
-      userId: 1,
+      userId: user.id,
       imageArr: painting2,
       name: "rainbow2",
       borders: true,
     };
-    const artwork1 = await createArtwork(image1);
-    const artwork2 = await createArtwork(image2);
+    await createArtwork(image1);
+    await createArtwork(image2);
     console.log("done");
   } catch (error) {
     throw error;
