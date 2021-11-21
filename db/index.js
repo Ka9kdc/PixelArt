@@ -87,7 +87,7 @@ const createArtwork = async ({ isPublic, borders, imageArr, name, userId }) => {
       .map((cell) => {
         return cell.color;
       })
-      .join(", ");
+      .join("-");
 
     const fieldKeys = ["image_array", "user_id"];
     const fieldValues = [imageStr, userId];
@@ -102,13 +102,13 @@ const createArtwork = async ({ isPublic, borders, imageArr, name, userId }) => {
     if (borders) {
       fieldValues.push(borders);
       fieldKeys.push("borders");
-      insertCounts += `, $${fieldKeys.length + 1}`;
+      insertCounts += `, $${fieldKeys.length}`;
     }
 
     if (name) {
       fieldValues.push(name);
       fieldKeys.push("name");
-      insertCounts += `, $${fieldKeys.length + 1}`;
+      insertCounts += `, $${fieldKeys.length}`;
     }
 
     const {

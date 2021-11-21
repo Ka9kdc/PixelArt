@@ -68,6 +68,9 @@ const ActionPanel = (props) => {
           See Grid Lines
         </button>
       )}
+      <button type="button" onClick={() => console.log(image)}>
+        Save
+      </button>
     </div>
   );
 };

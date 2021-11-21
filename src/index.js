@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./style.css";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 import { App, Login, Register, Navbar } from "./components";
+import { getToken } from "./auth";
 
 const Root = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = getToken();
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   return (
     <main>
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
