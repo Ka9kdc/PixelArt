@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import "./style.css";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
-import { App, Login, Register } from "./components";
+import { App, Login, Register, Navbar } from "./components";
 
 const Root = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <main>
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Switch>
         <Route path="/painting">
           <App />
