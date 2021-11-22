@@ -11,7 +11,7 @@ const Gallery = () => {
         const allArtwork = await getPublicArtwork();
         setAllArtwork(allArtwork);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     }
     getArt();

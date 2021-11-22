@@ -137,11 +137,23 @@ const getPublicArtwork = async () => {
   }
 };
 
+const getPublicArtworkLimited = async () => {
+  try {
+    const { rows } = await client.query(
+      "SELECT artwork.* FROM artwork WHERE is_public=true LIMIT 4;"
+    );
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+};
+
 const getArtworkByUserId = async (userId) => {
   try {
-    const rows = await client.query("SELECT * from artwork WHERE user_id=$1", [
-      userId,
-    ]);
+    const { rows } = await client.query(
+      "SELECT * from artwork WHERE user_id=$1",
+      [userId]
+    );
     return rows;
   } catch (error) {
     throw error;
@@ -159,4 +171,5 @@ module.exports = {
   getUserByUsername,
   getPublicArtwork,
   getArtworkByUserId,
+  getPublicArtworkLimited,
 };

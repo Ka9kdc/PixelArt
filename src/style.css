@@ -76,8 +76,10 @@ h1 {
 
 .main_about_grid {
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
+  margin: auto;
+  width: 100%;
 }
 
 .about_box {
@@ -130,6 +132,13 @@ a.about_box {
   -webkit-box-shadow: 5px 5px 15px 5px #000000;
   box-shadow: 5px 5px 15px 5px #000000;
 }
+
+.about_box table {
+  width: 90%;
+  align-self: center;
+  height: 90%;
+}
+
 /*
 #photoOfMe {
   -webkit-box-shadow: 2px 2px 15px 2px #000000;

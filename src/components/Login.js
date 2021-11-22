@@ -23,7 +23,7 @@ const Login = (props) => {
         setErrorMessage("");
         history.push("/painting");
       } catch (error) {
-        console.log(error);
+        console.error(error);
         setErrorMessage("Invalid username or password");
       }
     }

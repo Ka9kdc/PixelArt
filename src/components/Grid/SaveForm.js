@@ -13,7 +13,7 @@ const SaveForm = (props) => {
       await createArtwork(image, imageName, isPublic, bordersOn);
       setSaving(false);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 

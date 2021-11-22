@@ -8,10 +8,10 @@ const MyGallery = () => {
   useEffect(() => {
     async function getArt() {
       try {
-        const allArtwork = await getMyArtwork();
-        setAllArtwork(allArtwork);
+        const newArtwork = await getMyArtwork();
+        setAllArtwork(newArtwork);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     }
     getArt();

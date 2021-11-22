@@ -59,10 +59,19 @@ export async function getPublicArtwork() {
   }
 }
 
+export async function getPublicArtworkLimited() {
+  try {
+    const { data } = await axios.get(`${BASEURL}/artwork/Limit`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 export async function getMyArtwork() {
   try {
     const token = getToken();
-    const { data } = await axios.get(`${BASEURL}/artwork/public`, {
+    const { data } = await axios.get(`${BASEURL}/artwork/myArtwork`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",

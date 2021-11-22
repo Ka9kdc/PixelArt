@@ -5,11 +5,21 @@ const {
   getPublicArtwork,
   getArtworkByUserId,
   createArtwork,
+  getPublicArtworkLimited,
 } = require("../db");
 
 artworkRouter.get("/public", async (req, res, next) => {
   try {
     const allArtwork = await getPublicArtwork();
+    res.send(allArtwork);
+  } catch (error) {
+    next(error);
+  }
+});
+
+artworkRouter.get("/limit", async (req, res, next) => {
+  try {
+    const allArtwork = await getPublicArtworkLimited();
     res.send(allArtwork);
   } catch (error) {
     next(error);
