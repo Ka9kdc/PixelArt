@@ -3,7 +3,15 @@ import ReactDOM from "react-dom";
 import "./style.css";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
-import { App, Login, Register, Navbar, Gallery, MyGallery } from "./components";
+import {
+  App,
+  Login,
+  Register,
+  Navbar,
+  Gallery,
+  MyGallery,
+  Home,
+} from "./components";
 import { getToken } from "./auth";
 
 const Root = () => {
@@ -36,8 +44,13 @@ const Root = () => {
         <Route path="/gallery">
           <Gallery />
         </Route>
-        <Route path="/mygallery">
-          <MyGallery />
+        {isLoggedIn && (
+          <Route path="/mygallery">
+            <MyGallery />
+          </Route>
+        )}
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </main>

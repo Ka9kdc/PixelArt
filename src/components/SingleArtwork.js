@@ -23,25 +23,24 @@ const SingleArtwork = (props) => {
       </h2>
       <table>
         <tbody>
-          {cellsArray.length &&
-            cellsArray.map((row, idx) => {
-              return (
-                <tr key={`${id}:row-${idx}`}>
-                  {row.map((cell, cellIdx) => {
-                    return (
-                      <td
-                        key={`${id}:row-${idx}:cell${idx * cellIdx}`}
-                        className={borders ? "board" : ""}
-                        style={{
-                          backgroundColor: cell,
-                          "--grid-size": row.length,
-                        }}
-                      ></td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
+          {cellsArray.map((row, idx) => {
+            return (
+              <tr key={`${id}:row-${idx}`}>
+                {row.map((cell, cellIdx) => {
+                  return (
+                    <td
+                      key={`${id}:row-${idx}:cell${(idx + 1) * cellIdx}`}
+                      className={borders ? "board" : ""}
+                      style={{
+                        backgroundColor: cell,
+                        "--grid-size": row.length,
+                      }}
+                    ></td>
+                  );
+                })}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
