@@ -15,9 +15,10 @@ table {
   min-height: 5px;
 }
 
-.cell.board {
+.board {
   border: 1px solid gray;
 }
+
 .flex_row .cell {
   border: 1px solid black;
 }
@@ -50,4 +51,17 @@ table {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
+}
+
+h1 {
+  text-align: center;
+}
+
+.gallery table {
+  width: 350px;
+  height: 350px;
+}
+
+.gallery h2 {
+  text-align: center;
 }

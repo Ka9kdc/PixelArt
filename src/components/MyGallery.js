@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getMyArtwork } from "../api";
+import SingleArtwork from "./SingleArtwork";
 
 const MyGallery = () => {
   const [allArtwork, setAllArtwork] = useState([]);
@@ -18,17 +19,12 @@ const MyGallery = () => {
 
   return (
     <div>
-      {allArtwork.map((art) => {
-        return (
-          <div key={art.id}>
-            <p>{art.image_array}</p>
-            <h2>
-              {art.name} by {art.username}
-            </h2>
-          </div>
-        );
-        // return <SingleArtwork art={art} key={art.id} />
-      })}
+      <h1>My Image Gallery</h1>
+      <div className="flex_row">
+        {allArtwork.map((art) => {
+          return <SingleArtwork {...art} key={art.id} />;
+        })}
+      </div>
     </div>
   );
 };
