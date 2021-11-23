@@ -8,6 +8,33 @@
   padding: 0;
   margin: 0;
   font-family: "VT323", monospace;
+  z-index: 10;
+}
+
+nav button {
+  color: white;
+  padding: 5px 10px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+nav button:hover {
+  -webkit-box-shadow: 0px 0px 15px 7px #ffffff;
+  box-shadow: 0px 0px 15px 7px #ffffff;
+}
+
+nav h2 {
+  font-size: 2.2em;
+  align-self: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+nav.flex_row {
+  margin: 0px;
+  padding: 10px;
+  background-color: black;
 }
 
 table {
@@ -81,7 +108,6 @@ h1 {
   margin: auto;
   /* width: 100%; */
   background-color: white;
-  z-index: 10;
 }
 
 .about_box {
@@ -95,7 +121,7 @@ h1 {
   align-content: center;
   justify-content: space-around;
   padding: 10px;
-  z-index: 10;
+
   background-color: white;
 }
 
@@ -151,12 +177,10 @@ a.about_box {
   flex-flow: column nowrap;
   align-content: center;
   justify-content: center;
-  z-index: 10;
 }
 
 .header a {
   text-align: center;
-  z-index: 10;
 }
 
 .title {
@@ -164,14 +188,12 @@ a.about_box {
 }
 
 a .sub_title {
-  z-index: 10;
 }
 
 .sub_title {
   font-size: min(3em, 5vw);
   padding: 10px;
   background-color: unset;
-  z-index: 10;
 }
 
 .sub_title:hover {
@@ -194,6 +216,7 @@ a .sub_title {
   top: 4vw;
   left: 0;
   width: 90%;
+  z-index: 1;
 }
 
 /*
