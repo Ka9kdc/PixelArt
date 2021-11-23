@@ -1,7 +1,9 @@
 import axios from "axios";
 import { getToken } from "../auth";
-console.log(process.env);
-const { BASE = "localhost:5000" } = process.env;
+
+let { BASE = "http://localhost:5000" } = process.env;
+if (BASE === "http://localhost:5000" && process.env.NODE_ENV === "production")
+  BASE = "https://pixal-art.herokuapp.com/";
 const BASEURL = BASE + "/api";
 
 export async function loginUser(username, password) {
