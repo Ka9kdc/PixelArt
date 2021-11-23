@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getToken } from "../auth";
-
-const { BASE = "http://localhost:5000" } = process.env;
+console.log(process.env);
+const { BASE = "localhost:5000" } = process.env;
 const BASEURL = BASE + "/api";
 
 export async function loginUser(username, password) {
