@@ -235,7 +235,9 @@ a .sub_title {
 
 .actions button:hover,
 .newColorPicker:hover,
-.board_size:hover {
+.board_size:hover,
+.login_form button:hover,
+.login_form p:hover {
   -webkit-box-shadow: 5px 5px 15px 5px #000000;
   box-shadow: 5px 5px 15px 5px #000000;
 }
@@ -255,4 +257,28 @@ input {
 .image_title {
   font-size: 1.5em;
   margin-bottom: 10px;
+}
+
+.login_form {
+  border: 4px solid black;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 450px;
+  margin: 50px auto;
+  padding: 10px;
+}
+
+.login_form span {
+  color: red;
+}
+
+.login_form button {
+  text-transform: uppercase;
+  font-size: 1em;
+  margin: 10px;
+}
+
+.login_form p {
+  align-self: center;
+  padding: 10px;
 }

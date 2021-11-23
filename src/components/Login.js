@@ -4,7 +4,7 @@ import { loginUser } from "../api";
 import { storeToken } from "../auth";
 
 const Login = (props) => {
-  const { setIsLoggedIn, isLoggedIn } = props;
+  const { setIsLoggedIn } = props;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -29,10 +29,8 @@ const Login = (props) => {
     }
   }
 
-  if (isLoggedIn) return <h1>You are Logged in</h1>;
-
   return (
-    <form onSubmit={handleLogin}>
+    <form onSubmit={handleLogin} className="login_form">
       {errorMessage.length ? <span>{errorMessage}</span> : null}
       <fieldset id="username">
         <label htmlFor="username">Username: </label>
@@ -55,7 +53,9 @@ const Login = (props) => {
         />
       </fieldset>
       <button type="submit">Log in</button>
-      <Link to="/register">New User? Click here to Register</Link>
+      <p>
+        <Link to="/register">New User? Click here to Register</Link>
+      </p>
     </form>
   );
 };

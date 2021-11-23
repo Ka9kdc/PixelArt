@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./style.css";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  BrowserRouter as Router,
+  Redirect,
+} from "react-router-dom";
 
 import {
   App,
@@ -31,24 +36,26 @@ const Root = () => {
         <Route path="/painting">
           <App />
         </Route>
-        {!isLoggedIn && (
-          <Route path="/login">
+        <Route path="/login">
+          {!isLoggedIn ? (
             <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-          </Route>
-        )}
-        {!isLoggedIn && (
-          <Route path="/register">
-            <Register isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-          </Route>
-        )}
+          ) : (
+            <Redirect to="/mygallery" />
+          )}
+        </Route>
+        <Route path="/register">
+          {!isLoggedIn ? (
+            <Register setIsLoggedIn={setIsLoggedIn} />
+          ) : (
+            <Redirect to="/mygallery" />
+          )}
+        </Route>
         <Route path="/gallery">
           <Gallery />
         </Route>
-        {isLoggedIn && (
-          <Route path="/mygallery">
-            <MyGallery />
-          </Route>
-        )}
+        <Route path="/mygallery">
+          {isLoggedIn ? <MyGallery /> : <Redirect to="/login" />}
+        </Route>
         <Route path="/">
           <Home />
         </Route>

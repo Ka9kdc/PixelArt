@@ -4,7 +4,7 @@ import { registerUser } from "../api";
 import { storeToken } from "../auth";
 
 const Register = (props) => {
-  const { setIsLoggedIn, isLoggedIn } = props;
+  const { setIsLoggedIn } = props;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [retypePassword, setRetypePassword] = useState("");
@@ -33,10 +33,8 @@ const Register = (props) => {
     }
   }
 
-  if (isLoggedIn) return <h1>You are Logged in</h1>;
-
   return (
-    <form onSubmit={handleRegister}>
+    <form onSubmit={handleRegister} className="login_form">
       {errorMessage.length ? <span>{errorMessage}</span> : null}
       <fieldset id="username">
         <label htmlFor="username">Username: </label>
@@ -65,11 +63,13 @@ const Register = (props) => {
           value={retypePassword}
           onChange={(event) => setRetypePassword(event.target.value)}
           name="password"
-          placeholder="Enter Your Password Again"
+          placeholder="Enter Password"
         />
       </fieldset>
       <button type="submit">Register</button>
-      <Link to="/login">All Ready a user? Click here to Login</Link>
+      <p>
+        <Link to="/login">All Ready a user? Click here to Login</Link>
+      </p>
     </form>
   );
 };
