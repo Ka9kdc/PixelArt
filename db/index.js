@@ -148,7 +148,7 @@ const getPublicArtwork = async () => {
 const getPublicArtworkLimited = async () => {
   try {
     const { rows } = await client.query(
-      "SELECT artwork.* FROM artwork WHERE is_public=true LIMIT 4;"
+      "SELECT artwork.* FROM artwork WHERE is_public=true ORDER BY saving_date DESC LIMIT 4;"
     );
     return rows;
   } catch (error) {

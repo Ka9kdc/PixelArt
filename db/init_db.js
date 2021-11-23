@@ -28,9 +28,10 @@ async function buildTables() {
       id SERIAL PRIMARY KEY,
       user_id INTEGER REFERENCES users(id),
       image_array TEXT NOT NULL,
-      borders boolean,
+      borders boolean DEFAULT false,
       is_public boolean DEFAULT false,
-      name VARCHAR(255)
+      name VARCHAR(255) NOT NULL,
+      saving_date DATE NOT NULL DEFAULT CURRENT_DATE
     );
     `);
     console.log("tables created");
@@ -40,7 +41,7 @@ async function buildTables() {
 }
 
 const painting1 = [
-  { id: 0, color: "black" },
+  { id: 0, color: "red" },
   { id: 1, color: "red" },
   { id: 2, color: "red" },
   { id: 3, color: "red" },

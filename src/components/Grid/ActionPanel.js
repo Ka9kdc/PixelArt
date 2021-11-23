@@ -87,11 +87,21 @@ const ActionPanel = (props) => {
           See Grid Lines
         </button>
       )}
-      <button type="button" onClick={checkSave}>
-        Save
-      </button>
-      {saving ? <SaveForm image={image} setSaving={setSaving} /> : null}
-      {savingError.length ? <span>{savingError}</span> : null}
+
+      {savingError.length ? (
+        <span className="error_message">{savingError}</span>
+      ) : null}
+      {saving ? (
+        <SaveForm
+          image={image}
+          setSaving={setSaving}
+          setSavingError={setSavingError}
+        />
+      ) : (
+        <button type="button" onClick={checkSave}>
+          Save
+        </button>
+      )}
     </div>
   );
 };

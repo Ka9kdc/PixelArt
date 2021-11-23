@@ -282,3 +282,8 @@ input {
   align-self: center;
   padding: 10px;
 }
+.error_message {
+  color: red;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}

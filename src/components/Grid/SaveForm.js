@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createArtwork } from "../../api";
 
 const SaveForm = (props) => {
-  const { image, setSaving } = props;
+  const { image, setSaving, setSavingError } = props;
   const [imageName, setImageName] = useState("");
   const [isPublic, setIsPublic] = useState(false);
   const [bordersOn, setbordersOn] = useState(false);
@@ -10,11 +10,23 @@ const SaveForm = (props) => {
   async function handleSave(event) {
     event.preventDefault();
     try {
-      await createArtwork(image, imageName, isPublic, bordersOn);
-      setSaving(false);
-      localStorage.removeItem(`image${Math.sqrt(image.length)}`);
+      if (!imageName.length) {
+        setSavingError("Please enter a name for your artwork");
+        localStorage.setItem(
+          `image${Math.sqrt(image.length)}`,
+          JSON.stringify(image)
+        );
+      } else {
+        await createArtwork(image, imageName, isPublic, bordersOn);
+        setSaving(false);
+        localStorage.removeItem(`image${Math.sqrt(image.length)}`);
+      }
     } catch (error) {
       console.error(error);
+      localStorage.setItem(
+        `image${Math.sqrt(image.length)}`,
+        JSON.stringify(image)
+      );
     }
   }
 
