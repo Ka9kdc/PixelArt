@@ -2,7 +2,15 @@
 const { Client } = require("pg");
 const DB_NAME = "localhost:5432/pixalart";
 const DB_URL = process.env.DATABASE_URL || `postgres://${DB_NAME}`;
-const client = new Client(DB_URL);
+const client = new Client({
+  connectionString: DB_URL,
+  ssl:
+    process.env.NODE_ENV === "production"
+      ? {
+          rejectUnauthorized: false,
+        }
+      : undefined,
+});
 
 // database methods
 const bcrypt = require("bcrypt");
