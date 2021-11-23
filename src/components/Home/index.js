@@ -15,6 +15,8 @@ const Home = () => {
     async function getArt() {
       try {
         const newArtwork = await getPublicArtworkLimited();
+        if (!Array.isArray(newArtwork))
+          throw new Error("Wrong content type came back");
         console.log(newArtwork);
         setAllArtwork(newArtwork);
       } catch (error) {
