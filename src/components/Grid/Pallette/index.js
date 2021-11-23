@@ -35,7 +35,7 @@ const Pallette = (props) => {
         ) : (
           <button
             type="button"
-            className="cell"
+            className="cell newColorPicker"
             style={{ "--grid-size": Math.min(optionPerRow, 10) }}
             onClick={(event) => {
               event.preventDefault();
@@ -48,7 +48,9 @@ const Pallette = (props) => {
         )}
         <div
           key="eraser"
-          className={"" === choosenColor ? "cell active" : "cell"}
+          className={
+            "" === choosenColor ? "cell active" : "cell newColorPicker"
+          }
           style={{
             "--grid-size": Math.min(optionPerRow, 12),
           }}
@@ -64,7 +66,9 @@ const Pallette = (props) => {
         {colorOptions.map((col) => (
           <div
             key={col}
-            className={col === choosenColor ? "cell active" : "cell"}
+            className={
+              col === choosenColor ? "cell active" : "cell newColorPicker"
+            }
             style={{
               backgroundColor: col,
               "--grid-size": Math.min(optionPerRow, 12),

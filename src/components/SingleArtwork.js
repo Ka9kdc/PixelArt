@@ -19,9 +19,6 @@ const SingleArtwork = (props) => {
 
   return (
     <div className="gallery">
-      <h2>
-        {name} by {username}
-      </h2>
       <table>
         <tbody>
           {cellsArray.map((row, idx) => {
@@ -44,6 +41,9 @@ const SingleArtwork = (props) => {
           })}
         </tbody>
       </table>
+      <h2 className="image_title">
+        {name} {username ? `by ${username}` : null}
+      </h2>
     </div>
   );
 };

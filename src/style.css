@@ -219,30 +219,40 @@ a .sub_title {
   z-index: 1;
 }
 
-/*
-#photoOfMe {
-  -webkit-box-shadow: 2px 2px 15px 2px #000000;
-	box-shadow: 2px 2px 15px 2px #000000;
+.actions button {
+  padding: 10px;
+  font-size: 2em;
+}
+.board_size {
+  padding: 10px;
+  font-size: 1.2em;
 }
 
-.about_row {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	width: 100%;
+.newColorPicker {
+  text-transform: uppercase;
+  font-size: 1em;
 }
 
-.about_row h2 {
-	font-size: 3em;
-  text-align: center;
+.actions button:hover,
+.newColorPicker:hover,
+.board_size:hover {
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+.flex_row h3 {
+  font-size: 2em;
 }
 
-#tech_used {
-	padding: 1em;
-	margin: 1em;
-	border: 10px solid #ffa500;
-	background-color: #ffe4b2;
-	display: flex;
-	flex-flow: column nowrap;
-	height: 85%;
-} */
+form,
+input {
+  font-size: 1.3em;
+}
+
+.page_title {
+  font-size: 5em;
+}
+
+.image_title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}

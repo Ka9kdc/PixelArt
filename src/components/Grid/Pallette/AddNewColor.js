@@ -36,7 +36,7 @@ const AddNewColor = (props) => {
       </fieldset>
       <button
         type="submit"
-        className="cell"
+        className="cell newColorPicker"
         style={{ "--grid-size": Math.min(optionPerRow, 12) }}
       >
         Add Color

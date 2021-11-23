@@ -12,6 +12,7 @@ const SaveForm = (props) => {
     try {
       await createArtwork(image, imageName, isPublic, bordersOn);
       setSaving(false);
+      localStorage.removeItem(`image${Math.sqrt(image.length)}`);
     } catch (error) {
       console.error(error);
     }

@@ -12,8 +12,14 @@ const Grid = (props) => {
   const [cellBordersOn, setCellBordersOn] = useState(true);
 
   useEffect(() => {
-    const newImage = makeBoard(gridSize);
-    setImage(newImage);
+    const oldImage = localStorage.getItem(`image${gridSize}`);
+    if (oldImage) {
+      setImage(JSON.parse(oldImage));
+    } else {
+      const newImage = makeBoard(gridSize);
+      setImage(newImage);
+    }
+
     // setMouseActive(false);
   }, [gridSize]);
 

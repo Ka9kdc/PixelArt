@@ -42,7 +42,10 @@ const ActionPanel = (props) => {
     } else {
       setSaving(false);
       setSavingError("Please log in to save your artwork");
-      localStorage.setItem("image", JSON.stringify(image));
+      localStorage.setItem(
+        `image${Math.sqrt(image.length)}`,
+        JSON.stringify(image)
+      );
     }
   }
 

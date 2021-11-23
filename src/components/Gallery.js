@@ -19,7 +19,7 @@ const Gallery = () => {
 
   return (
     <div>
-      <h1>Image Gallery</h1>
+      <h1 className="page_title">Image Gallery</h1>
       <div className="flex_row">
         {allArtwork.map((art) => {
           return <SingleArtwork {...art} key={art.id} />;
