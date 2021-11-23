@@ -15,6 +15,7 @@ const Home = () => {
     async function getArt() {
       try {
         const newArtwork = await getPublicArtworkLimited();
+        console.log(newArtwork);
         setAllArtwork(newArtwork);
       } catch (error) {
         console.error(error);
