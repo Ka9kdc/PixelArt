@@ -6,6 +6,7 @@ import MyName from "./MyName";
 import MintBeanShoutout from "./MintBeanShoutout";
 import { getPublicArtworkLimited } from "../../api";
 import HomeGallerySingle from "./HomeGallerySingle";
+import Colorful from "./Colorful";
 
 const Home = () => {
   const [allArtwork, setAllArtwork] = useState([]);
@@ -24,23 +25,27 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Pixal Art</h1>
-
-      <>
+      <div className="header">
+        <h1 className="title">Pixal Art</h1>
         <Link to="/painting">
-          <button type="button">Start painting</button>
+          <button type="button" className="sub_title">
+            Start painting
+          </button>
         </Link>
-      </>
+      </div>
+      <Colorful />
+
       <>About the app</>
       <div className="main_about_grid">
-        {allArtwork.length &&
-          allArtwork.map((art) => {
-            return (
-              <div className="about_box" key={art.id}>
-                <HomeGallerySingle {...art} />
-              </div>
-            );
-          })}
+        {allArtwork.length
+          ? allArtwork.map((art) => {
+              return (
+                <div className="about_box" key={art.id}>
+                  <HomeGallerySingle {...art} />
+                </div>
+              );
+            })
+          : null}
 
         <MyName />
         <AboutMe />
