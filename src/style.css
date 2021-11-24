@@ -305,3 +305,9 @@ input {
 .active_size {
   border: 2px solid black;
 }
+
+img.gif_frame {
+  max-width: 95%;
+  max-height: 95%;
+  align-self: center;
+}

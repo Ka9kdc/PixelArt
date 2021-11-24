@@ -8,6 +8,8 @@ import { getPublicArtworkLimited } from "../../api";
 import HomeGallerySingle from "./HomeGallerySingle";
 import Colorful from "./Colorful";
 import AboutTheApp from "./AboutTheApp";
+import AppInActionBall from "./AppInActionBall";
+import AppInActionTrees from "./AppInActionTrees";
 
 const Home = () => {
   const [allArtwork, setAllArtwork] = useState([]);
@@ -38,7 +40,9 @@ const Home = () => {
       <Colorful />
 
       <div className="main_about_grid">
+        <AppInActionBall />
         <AboutTheApp />
+        <AppInActionTrees />
         {allArtwork.length
           ? allArtwork.map((art) => {
               return (
