@@ -7,17 +7,16 @@ const {
 } = require("./index");
 
 async function buildTables() {
-  try {
-    client.connect();
-    console.log("droping");
-    // drop tables in correct order
-    await client.query(`
+  client.connect();
+  console.log("droping");
+  // drop tables in correct order
+  await client.query(`
     DROP TABLE If EXISTS artwork;
     DROP TABLE IF EXISTS users;
     `);
-    console.log("start table create");
-    // build tables in correct order
-    await client.query(`
+  console.log("start table create");
+  // build tables in correct order
+  await client.query(`
     CREATE TABLE users(
       id SERIAL PRIMARY KEY,
       username varchar(255) UNIQUE NOT NULL,
@@ -34,10 +33,7 @@ async function buildTables() {
       saving_date timestamp NOT NULL DEFAULT now()
     );
     `);
-    console.log("tables created");
-  } catch (error) {
-    throw error;
-  }
+  console.log("tables created");
 }
 
 const painting1 = [
@@ -200,59 +196,55 @@ const image6 =
     });
 
 async function populateInitialData() {
-  try {
-    // create useful starting data
-    console.log("create user");
-    const me = { username: "test", password: "test1234" };
-    const user = await createUser(me);
-    console.log("create artwork");
-    const image1 = {
-      userId: user.id,
-      imageArr: painting1,
-      name: "rainbow",
-      isPublic: true,
-    };
-    const image2 = {
-      userId: user.id,
-      imageArr: painting2,
-      name: "rainbow2",
-      borders: true,
-    };
-    const art3 = {
-      userId: user.id,
-      imageArr: image3,
-      name: "Sky",
-      isPublic: true,
-    };
-    const art4 = {
-      userId: user.id,
-      imageArr: image4,
-      name: "Hearts",
-      isPublic: true,
-    };
-    const art5 = {
-      userId: user.id,
-      imageArr: image5,
-      name: "Flag",
-      isPublic: true,
-    };
-    const art6 = {
-      userId: user.id,
-      imageArr: image6,
-      name: "Flag2",
-      isPublic: true,
-    };
-    await createArtwork(image1);
-    await createArtwork(image2);
-    await createArtwork(art3);
-    await createArtwork(art4);
-    await createArtwork(art5);
-    await createArtwork(art6);
+  // create useful starting data
+  console.log("create user");
+  const me = { username: "test", password: "test1234" };
+  const user = await createUser(me);
+  console.log("create artwork");
+  const image1 = {
+    userId: user.id,
+    imageArr: painting1,
+    name: "rainbow",
+    isPublic: true,
+  };
+  const image2 = {
+    userId: user.id,
+    imageArr: painting2,
+    name: "rainbow2",
+    borders: true,
+  };
+  const art3 = {
+    userId: user.id,
+    imageArr: image3,
+    name: "Sky",
+    isPublic: true,
+  };
+  const art4 = {
+    userId: user.id,
+    imageArr: image4,
+    name: "Hearts",
+    isPublic: true,
+  };
+  const art5 = {
+    userId: user.id,
+    imageArr: image5,
+    name: "Flag",
+    isPublic: true,
+  };
+  const art6 = {
+    userId: user.id,
+    imageArr: image6,
+    name: "Flag2",
+    isPublic: true,
+  };
+  await createArtwork(image1);
+  await createArtwork(image2);
+  await createArtwork(art3);
+  await createArtwork(art4);
+  await createArtwork(art5);
+  await createArtwork(art6);
 
-    console.log("done");
-  } catch (error) {
-    throw error;
-  }
+  console.log("done");
 }
 
 buildTables()
