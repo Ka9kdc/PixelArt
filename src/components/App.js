@@ -7,8 +7,8 @@ const App = () => {
   const [mouseActive, setMouseActive] = useState(false);
 
   return (
-    <div className="App" onMouseUp={() => setMouseActive(false)}>
-      <BoardSize setGridSize={setGridSize} />
+    <div className="fun_curser" onMouseUp={() => setMouseActive(false)}>
+      <BoardSize setGridSize={setGridSize} gridSize={gridSize} />
       <Grid
         mouseActive={mouseActive}
         setMouseActive={setMouseActive}

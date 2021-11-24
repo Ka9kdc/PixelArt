@@ -1,7 +1,7 @@
 import React from "react";
 
 const BoardSize = (props) => {
-  const { setGridSize } = props;
+  const { setGridSize, gridSize } = props;
   const sizeOptions = [8, 12, 16, 24, 32];
   return (
     <div className="flex_row">
@@ -9,7 +9,9 @@ const BoardSize = (props) => {
       {sizeOptions.map((size) => {
         return (
           <button
-            className="board_size"
+            className={
+              gridSize === size ? "board_size active_size" : "board_size"
+            }
             type="button"
             onClick={() => {
               setGridSize(size);

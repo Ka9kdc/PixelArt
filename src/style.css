@@ -56,10 +56,11 @@ table {
 
 .flex_row .cell {
   border: 1px solid black;
+  cursor: url("./cursor.cur"), pointer;
 }
 
 .flex_row .cell.active {
-  border: 5px solid yellow;
+  border: 5px solid black;
   transform: rotateZ(45deg);
 }
 
@@ -106,7 +107,6 @@ h1 {
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
   margin: auto;
-  /* width: 100%; */
   background-color: white;
 }
 
@@ -159,11 +159,6 @@ a.about_box {
   justify-self: center;
 }
 
-.contact_links img:hover {
-  -webkit-box-shadow: 5px 5px 15px 5px #000000;
-  box-shadow: 5px 5px 15px 5px #000000;
-}
-
 .about_box table {
   width: 90%;
   align-self: center;
@@ -191,6 +186,7 @@ a.about_box {
   color: black;
   text-decoration: unset;
   text-transform: uppercase;
+  cursor: url("./cursor.cur"), pointer;
 }
 
 .sub_title {
@@ -200,6 +196,7 @@ a.about_box {
   width: max-content;
   align-self: center;
   margin: 15px;
+  cursor: url("./cursor.cur"), pointer;
 }
 
 .sub_title:hover {
@@ -232,18 +229,21 @@ a.about_box {
 .board_size {
   padding: 10px;
   font-size: 1.2em;
+  cursor: url("./cursor.cur"), pointer;
 }
 
 .newColorPicker {
   text-transform: uppercase;
   font-size: 1em;
+  margin: 5px;
 }
 
 .actions button:hover,
 .newColorPicker:hover,
 .board_size:hover,
 .login_form button:hover,
-.login_form p:hover {
+.login_form p:hover,
+.contact_links img:hover {
   -webkit-box-shadow: 5px 5px 15px 5px #000000;
   box-shadow: 5px 5px 15px 5px #000000;
 }
@@ -300,4 +300,8 @@ input {
 
 .row_three {
   grid-row: 3;
+}
+
+.active_size {
+  border: 2px solid black;
 }
