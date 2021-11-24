@@ -25,7 +25,7 @@ module.exports = {
   root: true, // For configuration cascading.
   rules: {
     quotes: ["warn", "double"],
-    // "no-console": "warn", //add back in for final version
+    "no-console": "warn", //add back in for final version
     // "no-unused-vars": "off", //remove for final version
     "no-useless-catch": "off", //remove for final version
     "react/prop-types": "off", //remove for final version
