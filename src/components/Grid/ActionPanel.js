@@ -96,6 +96,7 @@ const ActionPanel = (props) => {
           image={image}
           setSaving={setSaving}
           setSavingError={setSavingError}
+          setImage={setImage}
         />
       ) : (
         <button type="button" onClick={checkSave}>

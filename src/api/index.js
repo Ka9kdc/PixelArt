@@ -1,6 +1,6 @@
 import axios from "axios";
 import { getToken } from "../auth";
-console.log(process.env);
+
 let { BASE = "http://localhost:5000" } = process.env;
 if (BASE === "http://localhost:5000" && process.env.NODE_ENV === "production")
   BASE = "https://pixal-art.herokuapp.com";

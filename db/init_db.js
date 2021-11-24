@@ -31,7 +31,7 @@ async function buildTables() {
       borders boolean DEFAULT false,
       is_public boolean DEFAULT false,
       name VARCHAR(255) NOT NULL,
-      saving_date DATE NOT NULL DEFAULT CURRENT_DATE
+      saving_date timestamp NOT NULL DEFAULT now()
     );
     `);
     console.log("tables created");
@@ -174,6 +174,31 @@ const painting2 = [
   { id: 63, color: "black" },
 ];
 
+const image3 =
+  "#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-yellow-#b9d9e9-#b9d9e9-yellow-#b9d9e9-#b9d9e9-yellow-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-yellow-#b9d9e9-yellow-#b9d9e9-yellow-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-yellow-yellow-yellow-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-yellow-yellow-yellow-yellow-yellow-yellow-yellow-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-yellow-yellow-yellow-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-yellow-#b9d9e9-yellow-#b9d9e9-yellow-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-yellow-#b9d9e9-#b9d9e9-yellow-#b9d9e9-#b9d9e9-yellow-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-white-white-white-white-white-white-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-orange-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-orange-orange-orange-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-orange-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-orange-orange-orange-orange-orange-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-orange-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-orange-orange-orange-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-orange-orange-orange-orange-orange-orange-orange-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-orange-orange-orange-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-orange-orange-orange-orange-orange-#b9d9e9-#b9d9e9-#b9d9e9-orange-orange-orange-orange-orange-orange-orange-orange-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-orange-orange-orange-orange-orange-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-orange-orange-orange-orange-orange-orange-orange-#b9d9e9-#b9d9e9-orange-orange-orange-orange-orange-orange-orange-orange-orange-#b9d9e9-#b9d9e9-#b9d9e9-orange-orange-orange-orange-orange-orange-orange-#b9d9e9-#b9d9e9-#b9d9e9-orange-orange-orange-orange-orange-orange-orange-orange-orange-#b9d9e9-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-#b9d9e9-orange-orange-orange-orange-orange-orange-orange-orange-orange-#b9d9e9-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange"
+    .split("-")
+    .map((el) => {
+      return { color: el };
+    });
+const image4 =
+  "pink-pink-pink-pink-pink-pink-pink-pink-red-red-red----red-red-red-purple-purple-purple-purple-purple-purple-purple-pink-pink-pink-pink-pink-pink-pink-red-red-red-red-red--red-red-red-red-red-purple-purple-purple-purple-purple-purple-pink-pink-pink-pink-pink-pink--red-red-red-red-red-red-red-red-red-red-red--purple-purple-purple-purple-purple-pink-pink-pink-pink-pink---red-red-red-red-red-red-red-red-red-red-red---purple-purple-purple-purple-purple-pink-pink-pink-purple-purple-purple--red-red-red-red-red-red-red-red-red--#b9d9e9-#b9d9e9-#b9d9e9-purple-purple-purple-purple-purple-pink-purple-purple-purple-purple-purple--red-red-red-red-red-red-red--#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-purple-#b9d9e9-purple-purple-purple-purple-purple-purple-purple-purple---red-red-red-red-red---#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-purple-purple-purple-purple-purple-purple-purple-purple-pink-pink-pink-red-red-red-pink-pink-pink-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-purple-purple-purple-purple-purple-purple-purple-pink-pink-pink-pink-pink-red-pink-pink-pink-pink-pink-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-purple-purple-purple-purple-purple-purple--pink-pink-pink-pink-pink-pink-pink-pink-pink-pink-pink--#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-purple-purple-purple-purple-purple---pink-pink-pink-pink-pink-pink-pink-pink-pink-pink-pink---#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-purple-purple-purple-#b9d9e9-#b9d9e9-#b9d9e9--pink-pink-pink-pink-pink-pink-pink-pink-pink--red-red-red-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-purple-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9--pink-pink-pink-pink-pink-pink-pink--red-red-red-red-red-#b9d9e9-red-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9---pink-pink-pink-pink-pink---red-red-red-red-red-red-red-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-purple-purple-purple-pink-pink-pink-purple-purple-purple-red-red-red-red-red-red-red-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-purple-purple-purple-purple-purple-pink-purple-purple-purple-purple-purple-red-red-red-red-red-red-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9--purple-purple-purple-purple-purple-purple-purple-purple-purple-purple-purple--red-red-red-red-red-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9---purple-purple-purple-purple-purple-purple-purple-purple-purple-purple-purple---red-red-red-red-red-#b9d9e9-#b9d9e9-#b9d9e9-red-red-red--purple-purple-purple-purple-purple-purple-purple-purple-purple--pink-pink-pink-red-red-red-red-red-#b9d9e9-red-red-red-red-red--purple-purple-purple-purple-purple-purple-purple--pink-pink-pink-pink-pink-red-pink-red-red-red-red-red-red-red-red---purple-purple-purple-purple-purple---pink-pink-pink-pink-pink-pink-pink-red-red-red-red-red-red-red-red-#b9d9e9-#b9d9e9-#b9d9e9-purple-purple-purple-#b9d9e9-#b9d9e9-#b9d9e9-pink-pink-pink-pink-pink-pink-pink-red-red-red-red-red-red-red-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-purple-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-pink-pink-pink-pink-pink-pink-red-red-red-red-red-red--#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9-#b9d9e9--pink-pink-pink-pink-pink"
+    .split("-")
+    .map((el) => {
+      return { color: el };
+    });
+const image5 =
+  "blue-blue-blue-blue-blue-red-red-red-red-red-red-red-blue-yellow-blue-yellow-blue--------blue-blue-blue-blue-blue-red-red-red-red-red-red-red-blue-yellow-blue-yellow-blue--------blue-blue-blue-blue-blue-red-red-red-red-red-red-red-------------red-red-red-red-red-red-red-red-red-red-red-red-------------red-red-red-red-red-red-red-red-red-red-red-red-------------red-red-red-red-red-red-red-red-red-red-red-red------------"
+    .split("-")
+    .map((el) => {
+      return { color: el };
+    });
+const image6 =
+  "-----------------------------------gray-blue-blue-blue-blue-blue-blue-blue-blue-blue-blue-blue-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red------gray-blue-yellow-blue-yellow-blue-yellow-blue-yellow-blue-yellow-blue---------------------gray-blue-blue-yellow-blue-yellow-blue-yellow-blue-yellow-blue-blue-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red------gray-blue-yellow-blue-yellow-blue-yellow-blue-yellow-blue-yellow-blue---------------------gray-blue-blue-yellow-blue-yellow-blue-yellow-blue-yellow-blue-blue-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red------gray-blue-blue-blue-blue-blue-blue-blue-blue-blue-blue-blue---------------------gray-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red------gray--------------------------------gray-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red------gray------------white-white-------------------gray-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red------gray--------------------------------gray-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red-red------gray--------------------------------gray--------------------------------gray--------------------------------gray--------------------------------gray--------------------------------gray--------------------------------gray--------------------------------gray--------------------------------gray--------------------------------gray--------------------------------gray--------------------------------gray-----------orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-----------gray-------------black------black-------------gray-----------orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-----------gray-----------orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-orange-----------gray------------black--------black-----------green-gray-green-----------black--------black---------green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green-green"
+    .split("-")
+    .map((el) => {
+      return { color: el };
+    });
+
 async function populateInitialData() {
   try {
     // create useful starting data
@@ -193,8 +218,37 @@ async function populateInitialData() {
       name: "rainbow2",
       borders: true,
     };
+    const art3 = {
+      userId: user.id,
+      imageArr: image3,
+      name: "Sky",
+      isPublic: true,
+    };
+    const art4 = {
+      userId: user.id,
+      imageArr: image4,
+      name: "Hearts",
+      isPublic: true,
+    };
+    const art5 = {
+      userId: user.id,
+      imageArr: image5,
+      name: "Flag",
+      isPublic: true,
+    };
+    const art6 = {
+      userId: user.id,
+      imageArr: image6,
+      name: "Flag2",
+      isPublic: true,
+    };
     await createArtwork(image1);
     await createArtwork(image2);
+    await createArtwork(art3);
+    await createArtwork(art4);
+    await createArtwork(art5);
+    await createArtwork(art6);
+
     console.log("done");
   } catch (error) {
     throw error;

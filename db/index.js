@@ -137,7 +137,7 @@ const createArtwork = async ({ isPublic, borders, imageArr, name, userId }) => {
 const getPublicArtwork = async () => {
   try {
     const { rows } = await client.query(
-      "SELECT artwork.*, users.username FROM artwork JOIN users on artwork.user_id=users.id WHERE is_public=true;"
+      "SELECT artwork.*, users.username FROM artwork JOIN users on artwork.user_id=users.id WHERE is_public=true ORDER BY saving_date DESC;"
     );
     return rows;
   } catch (error) {
@@ -148,7 +148,7 @@ const getPublicArtwork = async () => {
 const getPublicArtworkLimited = async () => {
   try {
     const { rows } = await client.query(
-      "SELECT artwork.* FROM artwork WHERE is_public=true ORDER BY saving_date DESC LIMIT 4;"
+      "SELECT artwork.* FROM artwork WHERE is_public=true ORDER BY saving_date DESC LIMIT 7"
     );
     return rows;
   } catch (error) {
@@ -159,7 +159,7 @@ const getPublicArtworkLimited = async () => {
 const getArtworkByUserId = async (userId) => {
   try {
     const { rows } = await client.query(
-      "SELECT * from artwork WHERE user_id=$1",
+      "SELECT * from artwork WHERE user_id=$1 ORDER BY saving_date DESC",
       [userId]
     );
     return rows;

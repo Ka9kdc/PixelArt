@@ -6,7 +6,6 @@ const SingleArtwork = (props) => {
 
   useEffect(() => {
     if (image_array && image_array.length) {
-      console.log(image_array);
       const newCells = image_array.split("-");
       const count = Math.sqrt(newCells.length);
       let newTable = new Array(count);

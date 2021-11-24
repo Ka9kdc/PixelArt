@@ -19,7 +19,7 @@ const Navbar = (props) => {
         </button>
       </Link>
       <Link to="/painting">
-        <button type="button" style={{ backgroundColor: "rgba(255,144,0,1)" }}>
+        <button type="button" style={{ backgroundColor: "#c45f00" }}>
           Painting
         </button>
       </Link>

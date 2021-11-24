@@ -7,6 +7,7 @@ import MintBeanShoutout from "./MintBeanShoutout";
 import { getPublicArtworkLimited } from "../../api";
 import HomeGallerySingle from "./HomeGallerySingle";
 import Colorful from "./Colorful";
+import AboutTheApp from "./AboutTheApp";
 
 const Home = () => {
   const [allArtwork, setAllArtwork] = useState([]);
@@ -15,7 +16,6 @@ const Home = () => {
     async function getArt() {
       try {
         const newArtwork = await getPublicArtworkLimited();
-        console.log(newArtwork);
         if (!Array.isArray(newArtwork))
           throw new Error("Wrong content type came back");
 
@@ -31,16 +31,14 @@ const Home = () => {
     <div>
       <div className="header">
         <h1 className="title">Pixal Art</h1>
-        <Link to="/painting">
-          <button type="button" className="sub_title">
-            Start painting
-          </button>
-        </Link>
+        <button type="button" className="sub_title">
+          <Link to="/painting">Start painting</Link>
+        </button>
       </div>
       <Colorful />
 
-      <>About the app</>
       <div className="main_about_grid">
+        <AboutTheApp />
         {allArtwork.length
           ? allArtwork.map((art) => {
               return (
@@ -55,10 +53,10 @@ const Home = () => {
         <AboutMe />
         <ContactLinks />
         <MintBeanShoutout />
-        <div id="tech_used" className="about_box">
+        <div id="tech_used" className="about_box row_three">
           <h2>Technologies Used</h2>
         </div>
-        <div id="tech_used" className="about_box">
+        <div id="tech_used" className="about_box row_three">
           <img src="images/react-logo.png" alt="React logo" />
 
           <img
@@ -67,12 +65,12 @@ const Home = () => {
           />
         </div>
 
-        <div id="tech_used" className="about_box">
+        <div id="tech_used" className="about_box row_three">
           <img src="images/express-facebook-share.png" alt="Express logo" />
 
           <img src="images/1280px-Node.js_logo.svg.png" alt="Node JS logo" />
         </div>
-        <div id="tech_used" className="about_box">
+        <div id="tech_used" className="about_box row_three">
           <img
             src="images/html5-logo-31819.png"
             alt="HTML CSS Javascript logo"
