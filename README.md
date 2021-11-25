@@ -1,6 +1,6 @@
 # Pixal Art
 
-Draw you favorite Retro Pixal Art.
+Draw your favorite Retro Pixal Art.
 
 ## Draw at [https://pixal-art.herokuapp.com/](https://pixal-art.herokuapp.com/)
 
@@ -22,11 +22,11 @@ Currently saving is restricted to logged in users only. And the images will be s
 
 ## Meet the Engineer - Kelsey Schroeder
 
-|                         ![Kelsey's Portrait](public/images/kelsey.png)                          |     [![My Portfolio Website](public/images/myPorttolio.png)](https://kelsey-schroeder.herokuapp.com) https://kelsey-schroeder.herokuapp.com     |
-| :---------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |
-| [![Github](public/images/github-logo.png)](https://github.com/Ka9kdc) https://github.com/Ka9kdc | [![Linkedin](public/images/linkedin-logo.png)](https://www.linkedin.com/in/kelsey-m-schroeder/) https://www.linkedin.com/in/kelsey-m-schroeder/ |
+|                                        ![Kelsey's Portrait](public/images/kelsey.png)                                        |         [![My Portfolio Website](public/images/myPorttolio.png)](https://kelsey-schroeder.herokuapp.com) [https://kelsey-schroeder.herokuapp.com](https://kelsey-schroeder.herokuapp.com)          |
+| :--------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [![Github](public/images/github-logo.png)](https://github.com/Ka9kdc) [https://github.com/Ka9kdc](https://github.com/Ka9kdc) | [![Linkedin](public/images/linkedin-logo.png)](https://www.linkedin.com/in/kelsey-m-schroeder/) [https://www.linkedin.com/in/kelsey-m-schroeder/](https://www.linkedin.com/in/kelsey-m-schroeder/) |
 
-### Technologies Used:
+### Technologies Used
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
