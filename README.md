@@ -18,6 +18,25 @@ Besides drawing your can view artwork created and saved in the Public Gallery. O
 
 Currently saving is restricted to logged in users only. And the images will be saved to your Gallery. When saving you will be given the options to make your artwork viewable by the public or private to you.
 
+![Screen Shot of Gallery](public/images/Screen%20Shot%202021-11-25%20at%2012.03.54%20AM.png)
+
+## Meet the Engineer - Kelsey Schroeder
+
+|                         ![Kelsey's Portrait](public/images/kelsey.png)                          |     [![My Portfolio Website](public/images/myPorttolio.png)](https://kelsey-schroeder.herokuapp.com) https://kelsey-schroeder.herokuapp.com     |
+| :---------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |
+| [![Github](public/images/github-logo.png)](https://github.com/Ka9kdc) https://github.com/Ka9kdc | [![Linkedin](public/images/linkedin-logo.png)](https://www.linkedin.com/in/kelsey-m-schroeder/) https://www.linkedin.com/in/kelsey-m-schroeder/ |
+
+### Technologies Used:
+
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Postgress](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
+
 ## To View Locally
 
 Clone Repo.
