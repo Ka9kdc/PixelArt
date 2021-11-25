@@ -65,7 +65,7 @@ const Home = () => {
         <div
           id="tech_used"
           className={
-            allArtwork.length > 7 ? "about_box row_five" : "about_box row_four"
+            allArtwork.length > 8 ? "about_box row_five" : "about_box row_four"
           }
         >
           <h2>Technologies Used</h2>
@@ -73,7 +73,7 @@ const Home = () => {
         <div
           id="tech_used"
           className={
-            allArtwork.length > 7 ? "about_box row_five" : "about_box row_four"
+            allArtwork.length > 8 ? "about_box row_five" : "about_box row_four"
           }
         >
           <img src="images/react-logo.png" alt="React logo" />
@@ -97,7 +97,7 @@ const Home = () => {
         <div
           id="tech_used"
           className={
-            allArtwork.length > 7 ? "about_box row_five" : "about_box row_four"
+            allArtwork.length > 8 ? "about_box row_five" : "about_box row_four"
           }
         >
           <img
