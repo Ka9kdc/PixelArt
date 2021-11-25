@@ -104,7 +104,7 @@ h1 {
 
 .main_about_grid {
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(var(--row-num), 1fr);
   grid-template-columns: repeat(4, 1fr);
   margin: auto;
   background-color: white;
@@ -294,12 +294,16 @@ input {
   font-size: 1.2em;
 }
 
-.row_two {
-  grid-row: 2;
-}
-
 .row_three {
   grid-row: 3;
+}
+
+.row_four {
+  grid-row: 4;
+}
+
+.row_five {
+  grid-row: 5;
 }
 
 .active_size {

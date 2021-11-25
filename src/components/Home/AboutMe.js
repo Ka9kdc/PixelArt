@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutMe() {
   return (
-    <div className="about_box row_two">
+    <div className="about_box row_three">
       <p>
         I am a pilot and amateur radio operator who after taking on the
         challenge of updating her radio clubs website, has fallen in love with

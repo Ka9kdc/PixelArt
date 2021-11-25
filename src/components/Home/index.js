@@ -7,9 +7,10 @@ import MintBeanShoutout from "./MintBeanShoutout";
 import { getPublicArtworkLimited } from "../../api";
 import HomeGallerySingle from "./HomeGallerySingle";
 import Colorful from "./Colorful";
-import AboutTheApp from "./AboutTheApp";
+import AboutTheAppBoxOne from "./AboutTheAppBoxOne";
 import AppInActionBall from "./AppInActionBall";
 import AppInActionTrees from "./AppInActionTrees";
+import AboutTheAppBoxTwo from "./AbouttheAppBoxTwo";
 
 const Home = () => {
   const [allArtwork, setAllArtwork] = useState([]);
@@ -39,9 +40,13 @@ const Home = () => {
       </div>
       <Colorful />
 
-      <div className="main_about_grid">
+      <div
+        className="main_about_grid"
+        style={{ "--row-num": allArtwork.length < 8 ? 5 : 6 }}
+      >
         <AppInActionBall />
-        <AboutTheApp />
+        <AboutTheAppBoxOne />
+        <AboutTheAppBoxTwo />
         <AppInActionTrees />
         {allArtwork.length
           ? allArtwork.map((art) => {
@@ -57,10 +62,20 @@ const Home = () => {
         <AboutMe />
         <ContactLinks />
         <MintBeanShoutout />
-        <div id="tech_used" className="about_box row_three">
+        <div
+          id="tech_used"
+          className={
+            allArtwork.length > 7 ? "about_box row_five" : "about_box row_four"
+          }
+        >
           <h2>Technologies Used</h2>
         </div>
-        <div id="tech_used" className="about_box row_three">
+        <div
+          id="tech_used"
+          className={
+            allArtwork.length > 7 ? "about_box row_five" : "about_box row_four"
+          }
+        >
           <img src="images/react-logo.png" alt="React logo" />
 
           <img
@@ -69,12 +84,22 @@ const Home = () => {
           />
         </div>
 
-        <div id="tech_used" className="about_box row_three">
+        <div
+          id="tech_used"
+          className={
+            allArtwork.length > 7 ? "about_box row_five" : "about_box row_four"
+          }
+        >
           <img src="images/express-facebook-share.png" alt="Express logo" />
 
           <img src="images/1280px-Node.js_logo.svg.png" alt="Node JS logo" />
         </div>
-        <div id="tech_used" className="about_box row_three">
+        <div
+          id="tech_used"
+          className={
+            allArtwork.length > 7 ? "about_box row_five" : "about_box row_four"
+          }
+        >
           <img
             src="images/html5-logo-31819.png"
             alt="HTML CSS Javascript logo"

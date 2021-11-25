@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactLinks = () => {
   return (
-    <div className="about_box contact_links row_two">
+    <div className="about_box contact_links row_three">
       <a href="https://github.com/Ka9kdc">
         <img
           src="images/github-logo.png"
