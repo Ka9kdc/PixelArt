@@ -247,13 +247,31 @@ async function populateInitialData() {
   const art5 = {
     userId: user.id,
     imageArr: image5,
-    name: "Flag",
+    name: "Spiral",
     isPublic: true,
   };
   const art6 = {
     userId: user.id,
     imageArr: image6,
-    name: "Flag2",
+    name: "Flag",
+    isPublic: true,
+  };
+  const art7 = {
+    userId: user.id,
+    imageArr: image7,
+    name: "Tree",
+    isPublic: true,
+  };
+  const art8 = {
+    userId: user.id,
+    imageArr: image8,
+    name: "Pokeball",
+    isPublic: true,
+  };
+  const art9 = {
+    userId: user.id,
+    imageArr: image9,
+    name: "Triangles",
     isPublic: true,
   };
   await createArtwork(image1);
@@ -262,6 +280,9 @@ async function populateInitialData() {
   await createArtwork(art4);
   await createArtwork(art5);
   await createArtwork(art6);
+  await createArtwork(art7);
+  await createArtwork(art8);
+  await createArtwork(art9);
 
   console.log("done");
 }

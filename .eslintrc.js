@@ -26,7 +26,7 @@ module.exports = {
   rules: {
     quotes: ["warn", "double"],
     // "no-console": "warn", //add back in for final version
-    "no-unused-vars": "off", //remove for final version
+    // "no-unused-vars": "off", //remove for final version
     // "no-useless-catch": "off", //remove for final version
     "react/prop-types": "off", //remove for final version
   },
