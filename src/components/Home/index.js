@@ -87,7 +87,7 @@ const Home = () => {
         <div
           id="tech_used"
           className={
-            allArtwork.length > 7 ? "about_box row_five" : "about_box row_four"
+            allArtwork.length > 8 ? "about_box row_five" : "about_box row_four"
           }
         >
           <img src="images/express-facebook-share.png" alt="Express logo" />
