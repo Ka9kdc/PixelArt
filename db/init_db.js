@@ -185,7 +185,6 @@ const image4 =
 const image5 =
   "yellow-orange-yellow-orange-red-orange-orange-orange-orange-red-orange-red-green-pink-green-pink-orange-orange-yellow-orange-red-red-red-red-red-red-orange-red-green-pink-green-green-yellow-yellow-yellow-orange-orange-orange-orange-orange-orange-orange-orange-red-green-pink-pink-pink----red-red-red-red-red-red-red-red-red-green-green-green-green-blue-blue--red-purple-purple-purple-purple-purple-purple-purple-purple-pink-pink-pink-pink--blue--red-purple-red-red-red-red-red-red-purple-pink-purple-purple-purple--blue--red-purple-red-purple-purple-purple-purple-red-purple-pink-purple-pink-pink--blue--red-purple-red-purple-red-red-purple-red-purple-pink-purple-pink-purple--blue--red-purple-red-purple-purple-red-purple-red-purple-pink-purple-pink-pink--blue--red-purple-red-red-red-red-purple-red-purple-pink-purple-purple-purple-blue-blue--red-purple-purple-purple-purple-purple-purple-red-purple-pink-pink-pink-pink----red-red-red-red-red-red-red-red-purple-purple-purple-purple-purple-black-black-black-gray-gray-gray-gray-gray-gray-gray-gray-blue-blue-blue-blue-blue---black-gray-black-black-black-black-black-black-gray-blue-green-green-green-green-black--black-gray-black-gray-gray-gray-gray-black-gray-blue-green-blue-blue-blue-black--black-gray-black-gray-black-black-gray-black-gray-blue-green-blue-green-green"
     .split("-")
-    .split("-")
     .map((el) => {
       return { color: el };
     });
