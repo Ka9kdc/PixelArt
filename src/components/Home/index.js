@@ -42,7 +42,7 @@ const Home = () => {
 
       <div
         className="main_about_grid"
-        style={{ "--row-num": allArtwork.length < 8 ? 5 : 6 }}
+        style={{ "--row-num": allArtwork.length <= 8 ? 5 : 6 }}
       >
         <AppInActionBall />
         <AboutTheAppBoxOne />
